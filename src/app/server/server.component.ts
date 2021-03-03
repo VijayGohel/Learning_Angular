@@ -5,5 +5,16 @@ import { Component } from "@angular/core";
     templateUrl: './server.component.html'
 })
 export class ServerComponent{
+    serverId: number =10;
+    allowAdding=true;
+    constructor() {
+        setTimeout(()=>{this.allowAdding=false},2000);
+    }
+
+    getStatus()
+    {
+        return 'offline';
+    }
+
 
 }
