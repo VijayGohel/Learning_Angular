@@ -8,7 +8,7 @@ export class ServerComponent{
     serverId: number =10;
     allowAdding=true;
     showServerStatus="Server is not created."
-    serverName ='';
+    serverName ='TestServer';
     constructor() {
         setTimeout(()=>{this.allowAdding=false},2000);
     }
