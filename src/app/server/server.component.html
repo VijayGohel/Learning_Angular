@@ -1,6 +1,9 @@
 <p>Server Component</p>
 
 <p> {{ 'Server'}} id:{{ serverId}} , status: {{getStatus()}}</p>
-
-<button class="btn btn-primary" [disabled]="allowAdding">Add Server</button>
+<label for="ServerName">Server Name</label>
+<input type="text" name="ServerName" id="ServerName" class="form-control" (input)="onUpdateServerName($event)">
+<p>{{ serverName}}</p>
+<button class="btn btn-primary" [disabled]="allowAdding" (click)="createServer()">Add Server</button>
+<p>{{ showServerStatus}}</p>
 
