@@ -1,7 +1,7 @@
 <p>Server Component</p>
 
-<p [ngStyle]="{backgroundColor : getColor()}" > {{ 'Server'}} id:{{ serverId}} , status: {{getStatus()}}</p>
-<p [ngStyle]="{backgroundColor : getColor()}" > {{ 'Server'}} id:{{ serverId}} , status: {{getStatus()}}</p>
+<p [ngStyle]="{backgroundColor : getColor()}" [ngClass]="{online  : serverStatus==='Online'}" > {{ 'Server'}} id:{{ serverId}} , status: {{getStatus()}}</p>
+
 <label for="ServerName">Server Name</label>
 <!-- <input type="text" name="ServerName" id="ServerName" class="form-control" (input)="onUpdateServerName($event)"> -->
 

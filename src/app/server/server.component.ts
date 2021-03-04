@@ -1,8 +1,17 @@
+import { style } from "@angular/animations";
 import { Component } from "@angular/core";
 
 @Component({
     selector: 'app-server',
-    templateUrl: './server.component.html'
+    templateUrl: './server.component.html',
+    styles: [
+        `
+         .online 
+         {
+             color:white;
+         }
+        `
+    ]
 })
 export class ServerComponent{
     serverId: number =10;
@@ -10,7 +19,7 @@ export class ServerComponent{
     showServerStatus="Server is not created."
     serverName ='TestServer';
     serverCreated =false;
-    serverStatus = 'offline';
+    serverStatus = 'Offline';
     constructor() {
         this.changeStatus();
         setTimeout(()=>{this.allowAdding=false},2000);
@@ -22,7 +31,7 @@ export class ServerComponent{
     }
     changeStatus()
     {
-        this.serverStatus = Math.random() > 0.5 ? "Online" : "Offline";
+        this.serverStatus = Math.random() > 0.5 ? 'Online' : 'Offline';
     }
     createServer()
     {
