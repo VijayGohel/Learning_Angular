@@ -9,18 +9,31 @@ export class ServerComponent{
     allowAdding=true;
     showServerStatus="Server is not created."
     serverName ='TestServer';
+    serverCreated =false;
+    serverStatus = 'offline';
     constructor() {
+        this.changeStatus();
         setTimeout(()=>{this.allowAdding=false},2000);
     }
 
     getStatus()
     {
-        return 'offline';
+        return this.serverStatus;
     }
-
+    changeStatus()
+    {
+        this.serverStatus = Math.random() > 0.5 ? "Online" : "Offline";
+    }
     createServer()
     {
-        this.showServerStatus="Server created !";
+        
+        this.serverCreated =true;
+        this.showServerStatus="Server created ! Name is"+this.serverName;
+    }
+
+    getColor()
+    {
+        return this.serverStatus === "Online" ? "green" : "red";
     }
 
     onUpdateServerName(event)
